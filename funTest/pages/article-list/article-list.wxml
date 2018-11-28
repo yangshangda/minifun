@@ -1,0 +1,50 @@
+<view class='contaniner'>
+<view class='typeName'>///\n\n\n{{typeName}}\n\n\n///</view>
+
+<!--顶部导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!--首页-->
+<view hidden="{{currentTab!==0}}">
+  <!--文章列表-->
+  <view class='post-container'>
+    <block wx:for="{{articleList}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post' catchtap='onTapToDetail' data-post-id="{{item.articleid}}" data-group-id="{{item.group_id}}">
+        <view class='post-text'>
+			    <view class='post-title'>{{item.articletitle}}</view>
+    		  <view class='post-time'>{{item.articledescription}}</view>
+    		  <view class='post-time'>{{item.articlecreatetime}}</view>
+		    </view>
+    	  <image src='{{item.articlecover}}'></image>
+  	  </view>
+    <!--文章列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+</view>
+ 
+<!--测试-->
+<view hidden="{{currentTab!==1}}">
+<!--测试列表-->
+  <view class='post-container'>
+    <block wx:for="{{questionnaireList}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post' catchtap='onTapToTest' data-questionid="{{item.questionid}}" data-group-id="{{item.group_id}}">
+        <view class='post-text'>
+			    <view class='post-title'>{{item.questiontitle}}</view>
+    		  <view class='post-time'>{{item.questiondescription}}</view>
+    		  <view class='post-time'>{{item.questioncreatetime}}</view>
+		    </view>
+    	  <image src='{{item.questioncover}}'></image>
+  	  </view>
+    <!--测试列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+</view>
+
+<view class='no_more'>没有更多了！</view>
+
+
+</view>

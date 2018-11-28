@@ -1,0 +1,68 @@
+<!--首页.wxml-->
+<view class='contaniner'>
+
+  <!--轮播图-->
+    <view class='swiper'>
+      <swiper indicator-dots='true' autoplay='true' interval='5000' circular='' >
+        <block wx:for="{{sendPost}}" wx:for-item="item" wx:for-index="idx">
+          <swiper-item>
+            <view  catchtap='onTapToDetail' data-post-id="{{item.articleid}}" data-group-id="{{item.articleid}}">
+              <image src='{{item.bannerimage}}'></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+<!-- 个人中心点击图标改后
+<view class='userCenter' bindtap='toTapusercenter'>
+     <view wx:if="{{userImformation.avatar }}"><image src='{{userImformation.avatar}}'></image></view>
+     <view wx:else ><image src='../../images/icon/user.png'></image></view>
+</view> -->
+
+<!--轮播底部线--> 
+<view class='middle'></view>
+ 
+<!--中间图标-->  
+<view class='icon'>
+  <view class='combination' catchtap='articleList' data-articleType='1'>
+    <image src='../../images/index_img/情感.png'></image>
+    <view>情感</view>
+  </view>
+  <view class='combination' catchtap='articleList' data-articleType='2'>
+    <image src='../../images/index_img/性格.png'></image>
+    <view>性格</view>
+  </view>
+  <view class='combination' catchtap='articleList' data-articleType='3'>
+    <image src='../../images/index_img/趣味.png'></image>
+    <view>趣味</view>
+  </view>
+  <view class='combination' catchtap='more'>
+    <image src='../../images/index_img/更多.png'></image>
+    <view>更多</view>
+  </view>
+</view>
+
+  <!--文章列表-->
+  <view class='post-container'>
+    <block wx:for="{{getArticle}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post' catchtap='onTapToDetail' data-post-id="{{item.articleid}}" data-group-id="{{item.group_id}}">
+        <view class='post-text'>
+			    <view class='post-title'>{{item.articletitle}}</view>
+    		  <view class='post-time'>{{item.articledescription}}</view>
+    		  <view class='post-time'>{{item.articlecreatetime}}</view>
+		    </view>
+    	  <image src='{{item.articlecover}}'></image>
+  	  </view>
+    <!--文章列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+  
+  	<!--更多按钮-->
+  	<view class='post-more' catchtap='getMore'>
+    	<view class='btn'>
+        更多
+      </view>
+  	</view>
+</view>

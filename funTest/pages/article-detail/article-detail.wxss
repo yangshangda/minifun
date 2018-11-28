@@ -1,0 +1,46 @@
+/*导入wxParser的样式表*/
+@import '../../wxParser/index.wxss';
+
+/*整个页面的样式*/
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
+/*文章详情大图的样式*/
+.head-image{
+	width: 750rpx;
+	height: 450rpx;
+}
+
+/*文章详情标题的样式*/
+.title{
+	font-size: 20px;
+	margin: 30rpx;
+	letter-spacing: 2px;
+	color: #4b556c;
+}
+
+/*文章详情的时间的样式*/
+.date{
+  border: 1px solid red;
+	margin-top: 15rpx;
+	margin-left: 30rpx;
+	justify-content: space-between;
+	font-size: 12px;
+}
+
+.detail{
+  margin-top: 30rpx;
+  width: 90%;
+  
+}
+
+/*页面末尾声明的样式*/
+.fun{
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  font-size: 8px;
+  text-align: center;
+}
+

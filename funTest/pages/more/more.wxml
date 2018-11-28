@@ -1,0 +1,62 @@
+<view class='contaniner'>
+
+<!--导航图标--> 
+<view class='icon'>
+  <view class='combination' catchtap='articleList' data-articleType='1'>
+    <image src='../../images/more_img/情感.png'></image>
+    <view>情感</view>
+  </view>
+  <view class='combination' catchtap='articleList' data-articleType='2'>
+    <image src='../../images/more_img/性格.png'></image>
+    <view>性格</view>
+  </view>
+  <view class='combination' catchtap='articleList' data-articleType='3'>
+    <image src='../../images/more_img/趣味.png'></image>
+    <view>趣味</view>
+  </view>
+  <view class='combination' catchtap=''>
+    <image src='../../images/more_img/财富.png'></image>
+    <view>财富no</view>
+  </view>
+  <view class='combination' catchtap=''>
+    <image src='../../images/more_img/职业.png'></image>
+    <view>职业no</view>
+  </view>
+  <view class='combination' catchtap=''>
+    <image src='../../images/more_img/智商.png'></image>
+    <view>智商no</view>
+  </view>
+  <view class='combination' catchtap=''>
+    <image src='../../images/more_img/综合.png'></image>
+    <view>综合no</view>
+  </view>
+  <view class='combination' catchtap='user'>
+    <image src='../../images/more_img/个人中心.png'></image>
+    <view>个人中心</view>
+  </view>
+</view>
+
+<!--分类图标底部线--> 
+<view class='bottom_line'></view>
+
+<!--分类-->
+<block wx:for="{{sortArticleList}}" wx:for-item="item" wx:for-index="idx">
+  <view class='sort_top'><view class='left_line'></view><text class='sort_text'>{{item.articleTypeName}}</text><p class='sort_more' catchtap='articleList' data-articleTypeName='{{item.articleTypeName}}'>查看更多></p></view>
+  <scroll-view scroll-x class='sort'>
+  <block wx:for="{{item}}" wx:for-item="v">
+    <view class='sort_all_article'>
+      <view class='sort_article'>
+          <image class='sort_article_img' src='{{v.articleCover}}'></image>
+          <text class='sort_article_text'>{{v.articleTitle}}</text>
+        
+      </view>
+    </view>
+    </block>
+  </scroll-view>
+  <!--分类文章底部线-->
+  <view class='bottom_article_line'></view>
+</block>
+
+<view class='no_more'>没有更多了！</view>
+
+</view>

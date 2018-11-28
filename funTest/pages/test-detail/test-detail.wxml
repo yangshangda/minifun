@@ -1,0 +1,50 @@
+<view class='big-v'>
+
+<view class="container1">
+
+  <view class='top-link'>
+    <view class='last'>上一题</view>
+    <view class='title-num'>
+      {{TId}}/{{num}}题
+    </view>
+  </view>
+
+  <view class='title-t'>
+    <view class='title-id'>{{TId}}.</view><view>{{Title}}</view>
+  </view>
+
+
+  <radio-group bindchange="radioChange">
+
+    <label bindtap='findQuestion'>
+      <view class='label-v'>
+        <radio value="{{AOptionScore}}" checked='{{Checked}}'>A. {{AOption}}</radio>
+      </view>
+    </label>
+
+    <label bindtap='findQuestion'>
+      <view class='label-v'>
+        <radio value="{{BOptionScore}}" checked='{{Checked}}'>B. {{BOption}}</radio>
+      </view>
+    </label>
+
+    <label bindtap='findQuestion'>
+      <view class='label-v'>
+        <radio value="{{COptionScore}}" checked='{{Checked}}'>C. {{COption}}</radio>
+      </view>
+    </label>
+
+    
+    <label bindtap='findQuestion'>
+      <view class='label-v'>
+        <radio value="{{DOptionScore}}" checked='{{Checked}}'>D.{{DOption}}</radio>
+      </view>
+    </label>
+   
+
+  </radio-group>
+
+
+
+</view>
+</view>

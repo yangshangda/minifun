@@ -1,0 +1,11 @@
+<view class="container1" style="background-image: url('../../images/welcome_img/welcome_background.jpg');background-size:100% {{deviceHeight}}px;height:{{deviceHeight}}px">
+
+  <view class="show-iconView">
+    <image class="pic"  src='/images/logo.jpg' />
+  </view>
+  
+  <view bindtap='navigate' class='button-info'>
+    <button  open-type="getUserInfo" bindgetuserinfo="userInfoHandler">进入首页</button>
+  </view>
+  
+</view>

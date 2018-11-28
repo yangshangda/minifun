@@ -1,0 +1,85 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx7b5d668466d6f342",
+	"projectname": "funTest",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "welcome",
+					"pathName": "pages/welcome/welcome",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "more",
+					"pathName": "pages/more/more",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "about-us",
+					"pathName": "pages/about-us/about-us",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "article-detail",
+					"pathName": "pages/article-detail/article-detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "consult",
+					"pathName": "pages/consult/consult"
+				}
+			]
+		}
+	}
+}

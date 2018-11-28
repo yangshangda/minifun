@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/more/more",
+    "pages/article-list/article-list",
+    "pages/user/user",
+    "pages/about-us/about-us",
+    "pages/article-detail/article-detail",
+    "pages/test-detail/test-detail",
+    "pages/consult/consult"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Fun心理测试",
+    "navigationBarTextStyle": "black"
+  }
+}

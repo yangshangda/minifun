@@ -1,0 +1,144 @@
+page{
+ 
+}
+
+.container1 {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-repeat: no-repeat
+  
+}
+
+.img-info{
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: black; 
+}
+.logo{
+  width: 180rpx;
+  height: 180rpx;
+ margin: 0rpx 20rpx 80rpx 20rpx;
+ border: 5rpx solid #EDB34F;
+ border-radius: 50%;
+  
+}
+.text-info{
+  width: 350rpx;
+  height: 150rpx;
+ 
+ padding: 20rpx;
+ border-radius: 5%;
+ text-align: center;
+ margin-top: 120px;
+
+}
+.tip{
+  color:#666666;
+  font-size: 35rpx;
+
+}
+.button-info{
+  border: 1rpx solid #444444;
+ width: 280rpx;
+ height: 72rpx;
+ 
+ text-align: center;
+ background-color: #ffff33;
+ margin-bottom: 220rpx;
+}
+button{
+  font-size:28rpx;
+    font-weight: bold;
+  color:#666666;
+text-align: center;
+
+background-color: #ffff33;
+
+}
+.pic{
+  margin-top: 100rpx;
+  
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1rpx solid #ffff33;
+  
+}
+@keyframes pic1 {
+  0% {
+    transform:translate3d(0, 20rpx, 0)rotate(-15deg);
+  }
+  15% {
+    transform:translate3d(0, 0rpx, 0)rotate(25deg);
+  }
+  36% {
+    transform:translate3d(0, -20rpx, 0)rotate(-20deg);
+  }
+  50% {
+    transform:translate3d(0, -10rpx, 0)rotate(15deg);
+  }
+  68% {
+    transform:translate3d(0, 10rpx, 0)rotate(-25deg);
+  }
+  85% {
+    transform:translate3d(0, 15rpx, 0)rotate(15deg);
+  }
+  100% {
+    transform:translate3d(0, 20rpx, 0)rotate(-15deg);
+  }
+}
+
+.water{
+  width: 50%;
+  height: 150px;
+  padding-top: -100rpx;
+}
+
+.big{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: -120px;
+}
+.img{
+  padding-right: -1000px;
+  margin-top: -28px;
+  height: 1600rpx;
+  width: 1400rpx;
+  opacity:0.5;
+filter:alpha(opacity=40);
+animation: pic2 18s ease-in-out infinite;
+}
+@keyframes pic2 {
+  0% {
+    transform:translate3d(0, 10rpx, 0)rotate(-5deg);
+  }
+  15% {
+    transform:translate3d(0, 0rpx, 0)rotate(5deg);
+  }
+  36% {
+    transform:translate3d(0, -5rpx, 0)rotate(-5deg);
+  }
+  50% {
+    transform:translate3d(0, -5rpx, 0)rotate(5deg);
+  }
+  68% {
+    transform:translate3d(0, 5rpx, 0)rotate(-5deg);
+  }
+  85% {
+    transform:translate3d(0, 5rpx, 0)rotate(5deg);
+  }
+  100% {
+    transform:translate3d(0, 5rpx, 0)rotate(-5deg);
+  }
+}
+back{
+  background-color: #c7e5f5;
+  width: 100%;
+  height: 200px;
+}

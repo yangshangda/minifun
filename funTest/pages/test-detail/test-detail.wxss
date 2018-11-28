@@ -1,0 +1,75 @@
+/*radio .wx-radio-input{
+  border-radius:100%;
+  width:0rpx;
+  height: 0rpx;
+}*/
+page{
+  background-color: #fafafa;
+}
+
+radio .wx-radio-input{
+  border-radius:50%;
+  width:27rpx;
+  height: 27rpx;
+}
+.big-v{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.container1 {
+  height: 50%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.top-link{
+  margin-top: 50rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: vertical;
+  justify-content: space-between;
+}
+
+.last{
+  color: #3b7ef8;
+  font-size: 14px;
+}
+
+.title-num{
+  color: #aeb0b4;
+  font-size: 14px;
+  
+}
+
+.title-t{
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: warp;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title-id{
+ margin-right: 25rpx;
+}
+
+radio-group{
+  margin-top:  45rpx;
+}
+
+.label-v{
+  font-size: 16px;
+  font-weight: 500;
+  color: #4b4b4b;
+  margin-top: 45rpx;
+  background-color: white;
+  border-radius: 8px;
+  width: 650rpx;
+  padding-bottom: 28rpx;
+}

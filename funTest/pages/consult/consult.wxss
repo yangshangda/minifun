@@ -1,0 +1,6 @@
+/*整个页面的样式*/
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

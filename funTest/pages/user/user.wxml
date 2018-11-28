@@ -1,0 +1,90 @@
+<view class='container1'>
+
+  <!--头像-->
+  <view class='user_center' style="background-image: url('../../images/user_img/background1.png');background-size:100% 400rpx;height:400rpx">
+      <view wx:if="{{userInfo.useravatarurl}}"><image src='{{userInfo.useravatarurl}}' mode="cover"></image></view>
+      <view wx:else ><image src='../../images/icon/user.png' mode="cover"></image></view>
+      <!--昵称-->
+      <text class="userinfo_nickname">{{userInfo.usernickname}}</text>
+      <view class='user_state'>
+        <view class='state_sort'>
+          <text>0</text>
+          <text>粉丝</text>
+        </view>
+        <view class='state_sort_line'></view>
+        <view class='state_sort'>
+          <text>0</text>
+          <text>关注</text>
+        </view>
+        <view class='state_sort_line'></view>
+        <view class='state_sort'>
+          <text>0</text>
+          <text>点赞</text>
+        </view>
+        <view class='state_sort_line'></view>
+        <view class='state_sort'>
+          <text>0</text>
+          <text>收藏</text>
+        </view>
+      </view>
+
+
+  </view>
+
+  <!--底部分界线--> 
+  <view class='bottom_line'></view>
+
+  <!--导航图标--> 
+  <view class='icon'>
+    <view class='combination' catchtap='articleList' data-articleType='1'>
+      <image src='../../images/more_img/情感.png'></image>
+      <view>待用</view>
+    </view>
+    <view class='combination' catchtap='articleList' data-articleType='2'>
+      <image src='../../images/more_img/性格.png'></image>
+      <view>待用</view>
+    </view>
+    <view class='combination' catchtap='articleList' data-articleType='3'>
+      <image src='../../images/more_img/趣味.png'></image>
+      <view>待用</view>
+    </view>
+    <view class='combination' catchtap=''>
+      <image src='../../images/more_img/财富.png'></image>
+      <view>社区</view>
+    </view>
+    <view class='combination' catchtap=''>
+      <image src='../../images/more_img/职业.png'></image>
+      <view>我看过的</view>
+    </view>
+    <view class='combination' catchtap=''>
+      <image src='../../images/more_img/智商.png'></image>
+      <view>我的测试</view>
+    </view>
+    <view class='combination' catchtap=''>
+      <image src='../../images/more_img/综合.png'></image>
+      <view>咨询师</view>
+    </view>
+    <view class='combination' catchtap='about_us'>
+      <image src='../../images/more_img/个人中心.png'></image>
+      <view>关于我们</view>
+    </view>
+    <!-- <view class='combination' catchtap='customService'>
+      <contact-button  type="default-light"   session-from="weapp">
+        <image class='custom_service_img' src='../../images/more_img/个人中心.png'></image>
+        <view class='custom_service_text'>客服中心</view>
+      </contact-button>
+    </view> -->
+    <view class='combination' catchtap=''>
+      <contact-button class='contact_button' size='100' type="default-light" session-from="weapp" >
+        <!-- <image class='custom_service_img' src='../../images/more_img/个人中心.png'></image> -->
+        
+      </contact-button>
+      <view class='custom_service_text'>客服中心</view>
+      </view>
+      
+    </view>
+  
+
+
+
+</view>
