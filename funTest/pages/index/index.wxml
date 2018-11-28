@@ -46,7 +46,7 @@
   <!--文章列表-->
   <view class='post-container'>
     <block wx:for="{{getArticle}}" wx:for-item="item" wx:for-index="idx">
-  	  <view class='post' catchtap='onTapToDetail' data-post-id="{{item.articleid}}" data-group-id="{{item.group_id}}">
+  	  <view class='post' catchtap='onTapToDetail' data-articleid="{{item.articleid}}" data-group-id="{{item.group_id}}">
         <view class='post-text'>
 			    <view class='post-title'>{{item.articletitle}}</view>
     		  <view class='post-time'>{{item.articledescription}}</view>

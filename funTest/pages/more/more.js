@@ -48,7 +48,7 @@ Page({
     console.log(e);
     //let articleType = e.currentTarget.dataset.articletype;
     wx.request({
-      url: 'http://localhost/Fun/Home/Article/sortArticleList',//文章列表接口
+      url: 'http://localhost/Fun1/Home/Article/sortArticleList',//文章列表接口
       data: {},
       method: "POST",
       header: {

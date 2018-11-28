@@ -29,7 +29,7 @@ Page({
     let i = this.data.e
     let that = this;
     wx.request({
-      url: 'http://localhost/Fun/Home/Test/testList',//测试问卷列表接口
+      url: 'http://localhost/Fun1/Home/Test/testList',//测试问卷列表接口
       data: { questionid: questionid},
       method: "POST",
       header: {

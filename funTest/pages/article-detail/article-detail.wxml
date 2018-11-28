@@ -1,17 +1,31 @@
 <!--文章详情.wxml-->
 
 <!--导入wxParser里的html解析api-->
-<import src="../../wxParser/index.wxml"/>
+<import src="../../wxParser1/index.wxml"/>
+<!-- <import src="../../wxParse/wxParse.wxml"/> -->
 
-<!--文章详情-->
-<view class='container'>
-  <!--文章详情的标题-->
-	<text class='title'>{{article.title}}</text>  <view class='detail'>
-  <!--文章详情的文章-->
-    <view class="wxParser">
+<!-- <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view> -->
+
+<view class="wxParser">
       <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
     </view>
+
+
+
+<!--文章详情-->
+<!--<view class='container1'>-->
+  <!--文章详情的标题-->
+	<!--<text class='title'>{{article.articletitle}}</text>  
+  <view class='detail'>-->
+  <!--文章详情的文章-->
+    <!--<view class="wxParser">
+    {{article.articlecontent}}
+      <template is="wxParser" data="{{wxParserData:article.articlecontent.nodes}}"/>
+      <!-- <template is="wxParser" data="{{wxParserData:richText.nodes}}"/> -->
+    <!--</view>
   </view>
   <!--页面末尾的声明-->
   <text class='fun'>--Fun心理测试by dada--</text>
-</view>
+<!--</view>-->

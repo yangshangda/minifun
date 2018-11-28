@@ -20,7 +20,7 @@ Page({
     let that = this;
     //console.log(options.articleType);
     wx.request({
-      url: 'http://localhost/Fun/Home/Article/articleList',//文章列表接口
+      url: 'http://localhost/Fun1/Home/Article/articleList',//文章列表接口
       data: { articleType: options.articleType },
       method: "POST",
       header: {
@@ -51,7 +51,7 @@ Page({
   questionnaireList: function (questionType) {
     let that = this;
     wx.request({
-      url: 'http://localhost/Fun/Home/Test/questionnaireList',//测试问卷列表接口
+      url: 'http://localhost/Fun1/Home/Test/questionnaireList',//测试问卷列表接口
       data: { questionType: questionType },
       method: "POST",
       header: {
