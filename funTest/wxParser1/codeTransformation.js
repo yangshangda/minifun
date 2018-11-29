@@ -3,6 +3,10 @@
  * @type {Object}
  */
 const codeMap = {
+  // '&lt;p&gt;': ' ',
+  // '&amp;nbsp;': '  ',
+  
+  
   // HTML 支持的数学符号
   '&forall;': '∀',
   '&part;': '∂',
@@ -103,6 +107,7 @@ const codeMap = {
   '&amp;': '&',
   '&lt;': '<',
   '&gt;': '>',
+  
 
   // HTML 支持的其他实体
   '&OElig;': 'Œ',

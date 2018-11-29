@@ -1,5 +1,3 @@
-const wxParser = require('../../wxParser1/index.js')
-// var WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
     article: [],
@@ -25,25 +23,15 @@ Page({
         // 'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data[0].articlecontent);
+        console.log(res.data.articleDetail[0]);
+        console.log(res.data.content);
         that.setData({
-          article: res.data[0],
-          //  articlecontent: res.data[0].articlecontent
-        })
-        // var article = res.data[0].articlecontent;
-        // WxParse.wxParse('article', 'html', article, that, 5);
-
-        that.renderContent(res.data[0].articlecontent);
+          article: res.data.articleDetail[0],
+          articlecontent: res.data.content
+        })                
       }
     })
   },
 
-  renderContent: function (content) {
-    wxParser.parse({
-      bind: 'richText',
-      html: content,
-      target: this,
-    })
-  },
   
 })

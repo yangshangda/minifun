@@ -1,16 +1,9 @@
 <!--文章详情.wxml-->
 
-<!--导入wxParser里的html解析api-->
-<import src="../../wxParser1/index.wxml"/>
-<!-- <import src="../../wxParse/wxParse.wxml"/> -->
 
-<!-- <view class="wxParse">
-    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view> -->
-
-<view class="wxParser">
-      <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
-    </view>
+<view>
+     <rich-text nodes="{{articlecontent}}" bindtap="tap"></rich-text>
+</view>
 
 
 
