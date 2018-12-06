@@ -45,10 +45,9 @@
   <scroll-view scroll-x class='sort'>
   <block wx:for="{{item}}" wx:for-item="v">
     <view class='sort_all_article'>
-      <view class='sort_article'>
+      <view class='sort_article' catchtap='onTapToDetail' data-articleid="{{v.articleId}}">
           <image class='sort_article_img' src='{{v.articleCover}}'></image>
           <text class='sort_article_text'>{{v.articleTitle}}</text>
-        
       </view>
     </view>
     </block>

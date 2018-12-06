@@ -6,7 +6,7 @@
       <swiper indicator-dots='true' autoplay='true' interval='5000' circular='' >
         <block wx:for="{{sendPost}}" wx:for-item="item" wx:for-index="idx">
           <swiper-item>
-            <view  catchtap='onTapToDetail' data-post-id="{{item.articleid}}" data-group-id="{{item.articleid}}">
+            <view catchtap='onTapToDetail' data-articleid="{{item.articleid}}" data-group-id="{{item.articleid}}">
               <image src='{{item.bannerimage}}'></image>
             </view>
           </swiper-item>

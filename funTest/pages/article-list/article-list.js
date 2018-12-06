@@ -75,6 +75,15 @@ Page({
     })
   },
 
+  //跳转到文章详情页面
+  onTapToDetail: function (e) {
+    console.log('articleId', e.currentTarget.dataset.articleid);
+    let articleId = e.currentTarget.dataset.articleid;
+    wx.navigateTo({
+      url: '/pages/article-detail/article-detail?articleId=' + articleId
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
