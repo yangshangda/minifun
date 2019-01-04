@@ -60,7 +60,7 @@
       <image src='../../images/more_img/智商.png'></image>
       <view>我的测试</view>
     </view>
-    <view class='combination' catchtap=''>
+    <view class='combination' catchtap='consult'>
       <image src='../../images/more_img/综合.png'></image>
       <view>咨询师</view>
     </view>
