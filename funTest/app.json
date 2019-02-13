@@ -8,7 +8,12 @@
     "pages/about-us/about-us",
     "pages/article-detail/article-detail",
     "pages/test-detail/test-detail",
-    "pages/consult/consult"
+    "pages/consult/consult",
+    "pages/material-list/material-list",
+    "pages/material-detail/material-detail",
+    "pages/make-material/make-material",
+    "pages/article-log/article-log",
+    "pages/jh/jh"
   ],
   "window": {
     "backgroundTextStyle": "light",

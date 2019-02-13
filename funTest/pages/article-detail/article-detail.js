@@ -14,8 +14,9 @@ Page({
 
   fetchArticles(articleId) {
     var that = this;
+    let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Article/articleDetail',//文章详情接口
+      url: 'http://' + localhost +'/Fun1/Home/Article/articleDetail',//文章详情接口
       data: { articleId: articleId },
       method: "POST",
       header: {

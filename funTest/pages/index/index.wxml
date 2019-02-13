@@ -60,9 +60,10 @@
   </view>
   
   	<!--更多按钮-->
-  	<view class='post-more' catchtap='getMore'>
+  	<!-- <view class='post-more' catchtap='getMore'>
     	<view class='btn'>
         更多
       </view>
-  	</view>
+  	</view> -->
+    <view class='no_more'>我是有底线的！</view>
 </view>

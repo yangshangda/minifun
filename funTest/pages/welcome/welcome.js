@@ -48,9 +48,10 @@ Page({
               //console.log('openid为' + openid);
               // console.log(userInfo.detail.userInfo);
               let userLoginInfo = userInfo.detail.userInfo;
+              let localhost = getApp().globalData.localhost;
               //console.log('avatarUrl',userLoginInfo.avatarUrl);
               wx.request({
-                url: 'http://localhost/Fun/Home/Welcome/index', //存入用户信息接口
+                url: 'http://' + localhost +'/Fun/Home/Welcome/index', //存入用户信息接口
                 data: {
                   userCode: userCode.code,
                   userOpenId: openid,

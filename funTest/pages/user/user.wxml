@@ -52,7 +52,7 @@
       <image src='../../images/more_img/财富.png'></image>
       <view>社区</view>
     </view>
-    <view class='combination' catchtap=''>
+    <view class='combination' catchtap='articleLog'>
       <image src='../../images/more_img/职业.png'></image>
       <view>我看过的</view>
     </view>

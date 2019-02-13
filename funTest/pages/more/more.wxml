@@ -14,9 +14,9 @@
     <image src='../../images/more_img/趣味.png'></image>
     <view>趣味</view>
   </view>
-  <view class='combination' catchtap=''>
+  <view class='combination' catchtap='materialList'>
     <image src='../../images/more_img/财富.png'></image>
-    <view>财富no</view>
+    <view>趣图</view>
   </view>
   <view class='combination' catchtap=''>
     <image src='../../images/more_img/职业.png'></image>

@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userOpenId: null
+    userOpenId: null,
+    localhost:'localhost'
   }
 })

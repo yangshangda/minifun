@@ -142,3 +142,12 @@ swiper image{
   text-align: center;
 
 }
+
+/*没有更多*/
+.no_more{
+  color: #5b5a5a;
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}

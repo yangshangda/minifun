@@ -18,9 +18,10 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    let localhost = getApp().globalData.localhost;
     //console.log(options.articleType);
     wx.request({
-      url: 'http://localhost/Fun1/Home/Article/articleList',//文章列表接口
+      url: 'http://' + localhost +'/Fun1/Home/Article/articleList',//文章列表接口
       data: { articleType: options.articleType },
       method: "POST",
       header: {
@@ -50,8 +51,9 @@ Page({
 // 测试问卷
   questionnaireList: function (questionType) {
     let that = this;
+    let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Test/questionnaireList',//测试问卷列表接口
+      url: 'http://' + localhost +'/Fun1/Home/Test/questionnaireList',//测试问卷列表接口
       data: { questionType: questionType },
       method: "POST",
       header: {
@@ -77,11 +79,24 @@ Page({
 
   //跳转到文章详情页面
   onTapToDetail: function (e) {
+    let userOpenId = getApp().globalData.userOpenId;
+    let localhost = getApp().globalData.localhost;
     console.log('articleId', e.currentTarget.dataset.articleid);
     let articleId = e.currentTarget.dataset.articleid;
-    wx.navigateTo({
-      url: '/pages/article-detail/article-detail?articleId=' + articleId
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/Article/log',
+      data: { userOpenId: userOpenId, articleId: articleId },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        wx.navigateTo({
+          url: '/pages/article-detail/article-detail?articleId=' + articleId
+        })
+      }
     })
+    
   },
 
   /**

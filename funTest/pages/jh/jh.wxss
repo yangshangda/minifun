@@ -1,0 +1,40 @@
+/*整个页面的样式*/
+.container1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.label{
+  display: flex;
+  width: 90%;
+  height: 160rpx;
+  border: 1rpx solid red;
+}
+.post{
+	display: flex;
+  width: 93%;
+  height: 200rpx;
+  margin-top:25rpx;
+  border-bottom: 0.5px solid #dedede;
+}
+
+.text{
+	width: 74%;
+}
+
+/*文章详情里的时间样式*/
+.time{
+	margin-top:20rpx;
+	font-size: 26rpx;
+  color: #5b5a5a;
+}
+.title{
+  font-size:38rpx;
+}
+
+image{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+}

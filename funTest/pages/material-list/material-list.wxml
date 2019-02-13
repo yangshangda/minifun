@@ -1,0 +1,17 @@
+<view class='contaniner'>
+
+<view class='icon'>
+  <block wx:for="{{materialList}}" wx:for-item="v">
+      <view class='combination' catchtap='materialDetail' data-materialid='{{v.materialid}}'>
+        <image src='{{v.materialcover}}'></image>
+        <view>{{v.materialtitle}}</view>
+      </view>
+  </block>
+</view>
+  <!--分类文章底部线-->
+  <view class='bottom_material_line'></view>
+
+
+<view class='no_more'>没有更多了！</view>
+
+</view>

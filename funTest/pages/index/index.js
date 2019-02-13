@@ -55,8 +55,9 @@ Page({
   // }
   getBannerInfo: function() {
     let that = this;
+    let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Banner/index',//轮播图接口
+      url: 'http://' + localhost +'/Fun1/Home/Banner/index',//轮播图接口
       data: {},
       method: "POST",
       header: {
@@ -72,8 +73,9 @@ Page({
   },
   getArticleInfo: function () {
     let that = this;
+    let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Article/index',//轮播图接口
+      url: 'http://' + localhost +'/Fun1/Home/Article/index',//轮播图接口
       data: {},
       method: "POST",
       header: {
@@ -116,21 +118,25 @@ Page({
 
   //跳转到文章详情页面
   onTapToDetail: function (e) {
+    let userOpenId = getApp().globalData.userOpenId;
+    let localhost = getApp().globalData.localhost;
     console.log('articleId', e.currentTarget.dataset.articleid);
     let articleId = e.currentTarget.dataset.articleid;
-    // let typeName = '';
-    // if (articleType == 1) {
-    //   typeName = '情感类';
-    // } else if (articleType == 2) {
-    //   typeName = '性格类';
-    // } else if (articleType == 3) {
-    //   typeName = '趣味类';
-    // } else {
-    //   typeName = '综合';
-    // }
-    wx.navigateTo({
-      url: '/pages/article-detail/article-detail?articleId=' + articleId 
+
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/Article/log',
+      data: { userOpenId: userOpenId, articleId: articleId},
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        wx.navigateTo({
+          url: '/pages/article-detail/article-detail?articleId=' + articleId
+        })
+      }
     })
+    
   },
 
 

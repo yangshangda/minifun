@@ -1,0 +1,7 @@
+<!--pages/make-material/make-material.wxml-->
+<!-- <image src='{{url || spec.productFirstImage}}'></image> -->
+<view class='contaniner'>
+  <view class='imagesize'>
+    <image mode="widthFix" src='{{url}}'></image>
+  </view>
+</view>

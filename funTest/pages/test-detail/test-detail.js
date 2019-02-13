@@ -6,13 +6,18 @@ Page({
     toastHidden: true,
     TId: '',
     Title: '',
+    Timg: '',
     AOption: '',
+    Aimg: '',
     AOptionScore: '',
     BOption: '',
+    Bimg: '',
     BOptionScore: '',
     COption: '',
+    Cimg: '',
     COptionScore: '',
     DOption: '',
+    Dimg: '',
     DOptionScore: '',
     Checked: false,
     e: 0,
@@ -27,9 +32,10 @@ Page({
   /*初始只调用一次，给newList[]赋值，这时已经确定QId */
   question(questionid) {
     let i = this.data.e
+    let localhost = getApp().globalData.localhost;
     let that = this;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Test/testList',//测试问卷列表接口
+      url: 'http://' + localhost +'/Fun1/Home/Test/testList',//测试问卷列表接口
       data: { questionid: questionid},
       method: "POST",
       header: {
@@ -41,7 +47,7 @@ Page({
           num: res.data.length,
           newList: res.data,
           QId: questionid,
-          TId: res.data[i].testnumbe,
+          TId: res.data[i].testnumber,
           Title: res.data[i].testtitle,
           AOption: res.data[i].atitle,
           AOptionScore: res.data[i].ascore,
@@ -85,15 +91,16 @@ Page({
   findQuestion() {
     let i = this.data.e
     let newlist = this.data.newList
+    let num = this.data.num
+    let that = this;
     //let allscore = newlist.objects[i].detail.value
     //let Checked = this.data.Checked
 
     let qid = this.data.QId
 
-
-    if (i < 20) {
-      this.setData({
-        TId: newlist[i].testnumbe,
+    if (i<num) {
+      that.setData({
+        TId: newlist[i].testnumber,
         Title: newlist[i].testtitle,
         AOption: newlist[i].atitle,
         AOptionScore: newlist[i].ascore,
@@ -105,90 +112,8 @@ Page({
         DOptionScore: newlist[i].dscore,
         Checked: false,
         e: i + 1
-
       })
-    } else {
-      let allscore = this.data.allscore
-      let MyUser = new wx.BaaS.User()
-      let currentUser = MyUser.getCurrentUserWithoutData()
-      let tableID = 34112
-      let Product = new wx.BaaS.TableObject(tableID)
-
-      let allscore1 = Math.round(allscore * 1.25)    //qid=1的总分计算方式:把20题的得分相加为粗分，粗分乘以1.25，四舍五入取整数，即得到标准分。
-      //qid==1 判断分数结果-------------------------------------------
-      if (allscore1 < 52) {               //52以下为正常
-        Product.find().then(res => {
-          let result = res.data.objects[0].Result     //0为结果id
-          //console.log('res.data.objects', result)
-
-          currentUser.set('AllScore', allscore1)
-          currentUser.set('Result', result)
-          // age 为自定义字段
-          currentUser.update().then(res => {
-            // success
-          }, err => {
-            // err
-          })
-        }, err => {
-          // err
-        })
-
-      } else if (allscore1 >= 53 && allscore1 <= 62) {      //53-62为轻度抑郁
-        Product.find().then(res => {
-
-          let result = res.data.objects[1].Result    //1为结果id
-          //console.log('res.data.objects', result)
-
-          currentUser.set('AllScore', allscore1)
-          currentUser.set('Result', result)
-          // 自定义字段
-          currentUser.update().then(res => {
-            // success
-          }, err => {
-            // err
-          })
-
-        }, err => {
-          // err
-        })
-      } else if (allscore1 >= 63 && allscore1 <= 72) {       //63-72为中度抑郁
-        Product.find().then(res => {
-
-          let result = res.data.objects[2].Result    //1为结果id
-          //console.log('res.data.objects', result)
-
-          currentUser.set('AllScore', allscore1)
-          currentUser.set('Result', result)
-          // 自定义字段
-          currentUser.update().then(res => {
-            // success
-          }, err => {
-            // err
-          })
-
-        }, err => {
-          // err
-        })
-      } else {                                         //72分以上为重度抑郁
-        Product.find().then(res => {
-
-          let result = res.data.objects[3].Result    //1为结果id
-          //console.log('res.data.objects', result)
-
-          currentUser.set('AllScore', allscore1)
-          currentUser.set('Result', result)
-          // 自定义字段
-          currentUser.update().then(res => {
-            // success
-          }, err => {
-            // err
-          })
-
-        }, err => {
-          // err
-        })
-      }
-
+    }else {
       wx.showLoading({
         title: '数据分析中!',
       })
@@ -198,9 +123,12 @@ Page({
           url: '../user/user',
         })
       }, 1000)
+
     }
 
+    
 
+      
   },
 
   radioChange: function (e) {

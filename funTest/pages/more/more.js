@@ -42,13 +42,25 @@ Page({
     })
   },
 
+  //素材列表
+  materialList: function (e) {
+    //let articleType = e.currentTarget.dataset.articletype;
+    let articleTypeName = e.currentTarget.dataset.articletypename;
+    let typeName = '';
+
+    wx.navigateTo({
+      url: '/pages/material-list/material-list'
+    })
+  },
+
   //分类文章列表
   sortArticleList: function (e) {
     let that = this;
     console.log(e);
+    let localhost = getApp().globalData.localhost;
     //let articleType = e.currentTarget.dataset.articletype;
     wx.request({
-      url: 'http://localhost/Fun1/Home/Article/sortArticleList',//文章列表接口
+      url: 'http://' + localhost +'/Fun1/Home/Article/sortArticleList',//文章列表接口
       data: {},
       method: "POST",
       header: {
@@ -72,11 +84,24 @@ Page({
 
   //跳转到文章详情页面
   onTapToDetail: function (e) {
+    let userOpenId = getApp().globalData.userOpenId;
+    let localhost = getApp().globalData.localhost;
     console.log('articleId', e.currentTarget.dataset.articleid);
     let articleId = e.currentTarget.dataset.articleid;
-    wx.navigateTo({
-      url: '/pages/article-detail/article-detail?articleId=' + articleId
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/Article/log',
+      data: { userOpenId: userOpenId, articleId: articleId },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        wx.navigateTo({
+          url: '/pages/article-detail/article-detail?articleId=' + articleId
+        })
+      }
     })
+    
   },
 
   /**

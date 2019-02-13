@@ -15,8 +15,9 @@ Page({
   onLoad: function (options) {
     let that = this;
     let userOpenId = getApp().globalData.userOpenId;
+    let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://localhost/Fun/Home/User/userInfo',//用户信息接口
+      url: 'http://'+localhost+'/Fun/Home/User/userInfo',//用户信息接口
       data: { userOpenId: userOpenId},
       method: "POST",
       header: {
@@ -55,6 +56,13 @@ Page({
   about_us: function (e) {
     wx.navigateTo({
       url: '/pages/about-us/about-us'
+    })
+  },
+
+  //我看过的
+  articleLog: function (e) {
+    wx.navigateTo({
+      url: '/pages/article-log/article-log'
     })
   },
 
