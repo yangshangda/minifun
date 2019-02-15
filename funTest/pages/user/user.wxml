@@ -36,9 +36,9 @@
 
   <!--导航图标--> 
   <view class='icon'>
-    <view class='combination' catchtap='articleList' data-articleType='1'>
+    <view class='combination' catchtap='maintag'>
       <image src='../../images/more_img/情感.png'></image>
-      <view>待用</view>
+      <view>主页</view>
     </view>
     <view class='combination' catchtap='articleList' data-articleType='2'>
       <image src='../../images/more_img/性格.png'></image>
@@ -56,7 +56,7 @@
       <image src='../../images/more_img/职业.png'></image>
       <view>我看过的</view>
     </view>
-    <view class='combination' catchtap=''>
+    <view class='combination' catchtap='testLog'>
       <image src='../../images/more_img/智商.png'></image>
       <view>我的测试</view>
     </view>

@@ -113,22 +113,21 @@ Page({
         Checked: false,
         e: i + 1
       })
-    }else {
+    } else {
+      
+      let allscore = this.data.allscore
+      let QId = this.data.QId
+
       wx.showLoading({
         title: '数据分析中!',
       })
       setTimeout(function () {
         wx.hideLoading()
         wx.reLaunch({
-          url: '../user/user',
+          url: '../result/result?qid=' + QId + '&&allscore=' + allscore,
         })
       }, 1000)
-
     }
-
-    
-
-      
   },
 
   radioChange: function (e) {

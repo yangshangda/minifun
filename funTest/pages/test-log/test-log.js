@@ -1,10 +1,11 @@
+// pages/test-log/test-log.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:[]
+    testList:[]
 
   },
 
@@ -12,16 +13,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.list();
-
-  },
-
-  list: function () {
+    let userOpenId = getApp().globalData.userOpenId;
     let localhost = getApp().globalData.localhost;
     let that = this;
     wx.request({
-      url: 'http://' + localhost + '/Fun1/Home/Consult/info',
-      data: {},
+      url: 'http://' + localhost + '/Fun1/Home/Test/mylog',
+      data: { userOpenId: userOpenId },
       method: "POST",
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -29,20 +26,41 @@ Page({
       success: function (res) {
         console.log(res);
         that.setData({
-          info: res.data,
+          testList: res.data,
         })
       }
     })
 
   },
 
-  //跳转到详情页面
-  onTapToDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/consult-detail/consult-detail?id=' + id
+  //dele
+  dele: function (e) {
+    let userOpenId = getApp().globalData.userOpenId;
+    let localhost = getApp().globalData.localhost;
+    let that = this;
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/Test/delelog',
+      data: { userOpenId: userOpenId },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        that.setData({
+          testList: [],
+        })
+        that.onLoad();
+      }
     })
 
+  },
+
+  //跳转到结果页面
+  onTapToDetail: function (e) {
+    let qid = e.currentTarget.dataset.qid;
+    wx.navigateTo({
+      url: '/pages/result/result?qid=' + qid
+    })
   },
 
   /**

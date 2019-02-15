@@ -55,7 +55,7 @@ Page({
 
   },
 
-  //
+  //dele
   dele: function (e) {
     let userOpenId = getApp().globalData.userOpenId;
     let localhost = getApp().globalData.localhost;

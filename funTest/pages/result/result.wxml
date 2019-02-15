@@ -1,0 +1,13 @@
+<view class='container1'>
+
+<view class='title'>{{info.questionTitle}}</view>
+<view class='time'>{{info.createTime}}</view>
+<view class='border'></view>
+<image src='{{info.questionCover}}'></image>
+<view class='result'>{{info.result}}</view>
+<view class='button'>
+  <view class='button1'><button class='reset' bindtap='reset'>重新测试</button></view>
+  <view class='button2'><button class='user' bindtap='user'>个人中心</button></view>
+</view>
+
+</view>

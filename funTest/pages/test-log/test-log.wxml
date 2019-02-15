@@ -1,0 +1,26 @@
+<view class='contaniner'>
+<view wx:if="{{testList}}" class='dele' catchtap='dele'>清空历史记录</view>
+
+<!--首页-->
+
+  <!--列表-->
+  <view class='post-container'>
+    <block wx:for="{{testList}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post'  catchtap='onTapToDetail' data-qid="{{item.qid}}">
+        <view class='post-text'>
+			    <view class='post-title'>{{item.questiontitle}}</view>
+    		  <view class='post-time'>{{item.questiondescription}}</view>
+    		  <view class='post-time'>{{item.createtime}}</view>
+		    </view>
+    	  <image src='{{item.questioncover}}'></image>
+  	  </view>
+    <!--列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+
+<view wx:if="{{testList}}" class='no_more'>没有更多了！</view>
+<view wx:else class='no_more'> 您还没有测试记录哦！ </view>
+
+
+</view>

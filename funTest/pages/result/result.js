@@ -1,10 +1,12 @@
+// pages/result/result.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:[]
+    info:[],
+    qid:''
 
   },
 
@@ -12,37 +14,52 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.list();
+    var qid = options.qid
+    var score = options.allscore
+    console.log(qid,score)
+    this.setData({
+      qid: qid
+    });
+    this.result(qid, score)
+    
 
   },
 
-  list: function () {
+  result: function (qid, score) {
     let localhost = getApp().globalData.localhost;
+    let userOpenId = getApp().globalData.userOpenId;
     let that = this;
     wx.request({
-      url: 'http://' + localhost + '/Fun1/Home/Consult/info',
-      data: {},
+      url: 'http://' + localhost + '/Fun1/Home/Test/result',//用户信息接口
+      data: { userOpenId: userOpenId, qid: qid, score: score},
       method: "POST",
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(res);
+        console.log(res.data);
         that.setData({
-          info: res.data,
-        })
+          info: res.data
+        });
       }
     })
 
+    
   },
 
-  //跳转到详情页面
-  onTapToDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/consult-detail/consult-detail?id=' + id
+  user: function () {
+    wx.reLaunch({
+      url: '../user/user',
     })
 
+  },
+
+  // 测试题
+  reset: function () {
+    let questionid = this.data.qid;
+    wx.navigateTo({
+      url: '/pages/test-detail/test-detail?questionid=' + questionid
+    })
   },
 
   /**

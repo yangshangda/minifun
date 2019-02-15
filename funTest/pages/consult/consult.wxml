@@ -1,2 +1,36 @@
-<!--pages/consult/consult.wxml-->
-<text>pages/consult/consult.wxml</text>
+<view class='contaniner'>
+
+<view class='left_line'></view>
+<text class='text'>心理咨询师</text>
+
+
+  <!--列表-->
+  <view class='post-container'>
+    <block wx:for="{{info}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post'  catchtap='onTapToDetail' data-id="{{item.id}}">
+        <image class='pic' src='{{item.img}}'></image>
+        <view class='post-text'>
+          <image wx:if="{{item.sex==1}}" class='sex' src='../../images/consult_img/man.png'></image>
+          <image wx:else class='sex' src='../../images/consult_img/women.png'></image>
+			    <view class='post-title'>{{item.name}}
+            <view wx:if="{{item.grade==1}}" class='grade1'>初级</view>
+            <view wx:if="{{item.grade==2}}" class='grade2'>中级</view>
+            <view wx:if="{{item.grade==3}}" class='grade3'>高级</view>
+            <view wx:if="{{item.recommend==1}}" class='recommend'>推荐</view>
+          </view>
+          <view class='phone'>电话：{{item.phone}}</view>
+    		  <view class='post-time'>擅长领域：{{item.description}}</view>
+    		  
+		    </view>
+    	  
+  	  </view>
+    <!--列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+
+<view class='no_more'>没有更多了！</view>
+
+
+
+</view>

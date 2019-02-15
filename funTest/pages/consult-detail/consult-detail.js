@@ -1,10 +1,10 @@
+// pages/consult-detail/consult-detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:[]
 
   },
 
@@ -12,36 +12,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.list();
-
-  },
-
-  list: function () {
-    let localhost = getApp().globalData.localhost;
-    let that = this;
-    wx.request({
-      url: 'http://' + localhost + '/Fun1/Home/Consult/info',
-      data: {},
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res);
-        that.setData({
-          info: res.data,
-        })
-      }
-    })
-
-  },
-
-  //跳转到详情页面
-  onTapToDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/consult-detail/consult-detail?id=' + id
-    })
 
   },
 

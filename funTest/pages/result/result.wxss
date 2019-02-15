@@ -1,0 +1,57 @@
+/*整个页面的样式*/
+.container1{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.title{
+  margin-top: 10rpx;
+  font-size: 55rpx;
+  color: #EDB34F;
+}
+.time{
+  font-size: 35rpx;
+  color: #5b5a5a;
+}
+.border{
+  height: 1rpx;
+  width: 90%;
+  border-bottom: 0.5px solid #dedede;
+}
+image{
+  max-width:350rpx;
+  max-height: 350rpx; 
+  margin: 20rpx;
+}
+.button{
+  width: 70%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  margin-top: 50rpx;
+}
+.button1{
+  width: 50%;
+  display: flex;
+  justify-content:center;
+}
+.button2{
+  width: 50%;
+  display: flex;
+  justify-content:center;
+}
+.reset{
+  height: 75rpx;
+  background-color: #EDB34F;
+  color: white;
+  font-size: 35rpx;
+}
+.user{
+  height: 75rpx;
+  background-color:rgb(23, 204, 23);
+  color: white;
+  font-size: 35rpx;
+}

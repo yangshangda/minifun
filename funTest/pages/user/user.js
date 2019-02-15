@@ -17,7 +17,7 @@ Page({
     let userOpenId = getApp().globalData.userOpenId;
     let localhost = getApp().globalData.localhost;
     wx.request({
-      url: 'http://'+localhost+'/Fun/Home/User/userInfo',//用户信息接口
+      url: 'http://'+localhost+'/Fun1/Home/User/userInfo',//用户信息接口
       data: { userOpenId: userOpenId},
       method: "POST",
       header: {
@@ -59,10 +59,24 @@ Page({
     })
   },
 
+  //主页
+  maintag: function (e) {
+    wx.navigateTo({
+      url: '/pages/index/index'
+    })
+  },
+
   //我看过的
   articleLog: function (e) {
     wx.navigateTo({
       url: '/pages/article-log/article-log'
+    })
+  },
+
+  //我的测试
+  testLog: function (e) {
+    wx.navigateTo({
+      url: '/pages/test-log/test-log'
     })
   },
 

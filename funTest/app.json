@@ -13,6 +13,9 @@
     "pages/material-detail/material-detail",
     "pages/make-material/make-material",
     "pages/article-log/article-log",
+    "pages/test-log/test-log",
+    "pages/result/result",
+    "pages/consult-detail/consult-detail",
     "pages/jh/jh"
   ],
   "window": {
