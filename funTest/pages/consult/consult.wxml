@@ -1,8 +1,10 @@
 <view class='contaniner'>
 
-<view class='left_line'></view>
-<text class='text'>心理咨询师</text>
-
+<view class='top'>
+  <view class='left_line'></view>
+  <text class='text'>心理咨询师</text>
+  <input class="search" bindinput="inter_name" placeholder="搜索：请输入名字"></input>
+</view>
 
   <!--列表-->
   <view class='post-container'>

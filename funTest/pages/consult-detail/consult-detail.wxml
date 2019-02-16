@@ -1,2 +1,46 @@
-<!--pages/consult-detail/consult-detail.wxml-->
-<text>pages/consult-detail/consult-detail.wxml</text>
+<view class='contaniner'>
+<view class='middle'></view>
+  <!--列表-->
+  <view class='post-container'>
+    <block wx:for="{{info}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post' data-id="{{item.id}}">
+        <image class='pic' src='{{item.img}}'></image>
+        <view class='post-text'>
+          <image wx:if="{{item.sex==1}}" class='sex' src='../../images/consult_img/man.png'></image>
+          <image wx:else class='sex' src='../../images/consult_img/women.png'></image>
+			    <view class='post-title'>{{item.name}}
+            <view wx:if="{{item.grade==1}}" class='grade1'>初级</view>
+            <view wx:if="{{item.grade==2}}" class='grade2'>中级</view>
+            <view wx:if="{{item.grade==3}}" class='grade3'>高级</view>
+            <view wx:if="{{item.recommend==1}}" class='recommend'>推荐</view>
+            <image catchtap='tel' data-phone="{{item.phone}}" class='phone_img' src='../../images/consult_img/consult1.png'></image>
+          </view>
+          <view class='phone'>电话：{{item.phone}}</view>
+    		  <view class='post-time'>地址：{{item.address}}</view>
+           
+		    </view>
+  	  </view>
+      <view class='middle'></view>
+
+    <view class='solve'>
+      <view class='left_line'></view>
+      <text class='text'>擅长解决</text>
+    </view>
+    <view class='description'>{{item.description}}</view>
+
+    <view class='solve'>
+      <view class='left_line'></view>
+      <text class='text'>个人说明</text>
+    </view>
+    <view class='description'>{{item.background}}</view>
+
+    <!--列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+
+<view class='no_more'>没有更多了！</view>
+
+
+
+</view>

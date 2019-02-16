@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "Fun心理咨询师",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#EDB34F"
+}

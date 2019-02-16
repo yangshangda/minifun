@@ -45,6 +45,28 @@ Page({
 
   },
 
+  inter_name: function(e) {
+    var name = e.detail.value
+    console.log(e.detail.value)
+    let localhost = getApp().globalData.localhost;
+    let that = this;
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/Consult/info',
+      data: { name: name},
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          info: res.data,
+        })
+      }
+    })
+
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

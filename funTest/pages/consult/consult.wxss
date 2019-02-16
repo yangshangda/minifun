@@ -106,18 +106,32 @@
   margin-top: 20rpx;
 }
 
+.top{
+  width: 100%;
+  display: flex;
+  justify-content:flex-start;
 
+}
 /*左边线*/
 .left_line{
   background-color: #EDB34F;
   width: 9rpx;
   height: 65rpx;
   float: left;
+  margin:40rpx 0 40rpx 0rpx;
 }
 .text{
   display: block;
   font-size: 37rpx;
   margin:45rpx 0 40rpx 30rpx;
+  float: left;
+}
+.search{
+  font-size: 37rpx;
+  margin:40rpx 0 40rpx 60rpx;
+  border:1rpx solid #EDB34F;
+  border-radius: 20rpx;
+  padding: 5rpx;
 }
 .grade1{
   text-align: center;
@@ -155,3 +169,4 @@
   height: 38rpx;
   color: white;
 }
+

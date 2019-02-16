@@ -1,1 +1,188 @@
-/* pages/consult-detail/consult-detail.wxss */
+/*整个页面的样式*/
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*清空历史记录*/
+.dele{
+	width: 100%;
+  text-align: right;
+  margin-top:10rpx;
+  margin-right:20rpx;
+  font-size: 30rpx;
+  color: #5b5a5a;
+}
+
+/*顶部导航*/
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active{
+  color: #FFCC00;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #FFCC00;
+}
+
+/*文章列表的样式*/
+.post-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  margin-top:10rpx;
+	border-radius: 5px;
+}
+
+.post{
+	display: flex;
+  width: 93%;
+  margin-top:10rpx;
+  margin-bottom:20rpx;
+  
+}
+
+.border{
+  width: 93%;
+  border-bottom: 0.5px solid #dedede;
+}
+
+.pic{
+	width: 160rpx;
+	height: 160rpx; 
+  margin-right: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.sex{
+	width: 35rpx;
+	height: 35rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  float: left;
+}
+
+.phone_img{
+	width: 50rpx;
+	height: 50rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.post-text{
+	width: 75%;
+}
+
+/*详情里的样式*/
+.post-time{
+	margin-top:10rpx;
+  margin-bottom:20rpx;
+	font-size: 24rpx;
+  color: #5b5a5a;
+}
+.phone{
+	margin-top:10rpx;
+	font-size: 24rpx;
+  color: #5b5a5a;
+}
+.post-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size:17px;
+}
+
+
+/*没有更多*/
+.no_more{
+  color: #5b5a5a;
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.grade1{
+  text-align: center;
+  margin-left: 10rpx;
+  background-color: rgb(106, 214, 57);
+  font-size: 30rpx;
+  width: 80rpx;
+  height: 38rpx;
+  color: white;
+}
+.grade2{
+  text-align: center;
+  margin-left: 10rpx;
+  background-color: #EDB34F;
+  font-size: 30rpx;
+  width: 80rpx;
+  height: 38rpx;
+  color: white;
+}
+.grade3{
+  text-align: center;
+  margin-left: 10rpx;
+  background-color: rgb(241, 104, 24);
+  font-size: 30rpx;
+  width: 80rpx;
+  height: 38rpx;
+  color: white;
+}
+.recommend{
+  text-align: center;
+  margin-left: 10rpx;
+  background-color: rgb(243, 52, 18);
+  font-size: 30rpx;
+  width: 80rpx;
+  height: 38rpx;
+  color: white;
+}
+
+/*分界线*/
+.middle{
+  background-color: #f6f6f6;
+  height: 23rpx;
+  margin-bottom:20rpx; 
+  width: 100%;
+}
+
+/*左边线*/
+.left_line{
+  background-color: #EDB34F;
+  width: 10rpx;
+  height: 48rpx;
+  float: left;
+}
+.text{
+  display: block;
+  font-size: 33rpx;
+  margin:0rpx 0 30rpx 30rpx;
+}
+
+.solve{
+  width: 100%;
+  display: flex;
+  justify-content:flex-start;
+}
+
+.description{
+    width: 90%;
+    font-size: 33rpx;
+    margin-bottom: 20rpx;
+
+}

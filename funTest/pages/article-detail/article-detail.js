@@ -29,7 +29,7 @@ Page({
         that.setData({
           article: res.data.articleDetail[0],
           articlecontent: res.data.content
-        })                
+        })
       }
     })
   },
