@@ -46,4 +46,28 @@
   justify-content: center;
   color: #4b556c;
 }
+.comment{
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+  text-align: right;
+}
+.like{
+
+  width: 45rpx;
+  height: 45rpx;
+}
+.like_num{
+  line-height: 45rpx;
+  text-align: center;
+  color: rgb(79, 128, 235);
+  font-size: 30rpx;
+  margin-right: 5rpx;
+}
+.not_like_num{
+  line-height: 45rpx;
+  text-align: center;
+  color: rgb(148, 152, 160);
+  font-size: 30rpx;
+}
 

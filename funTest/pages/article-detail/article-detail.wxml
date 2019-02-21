@@ -18,7 +18,13 @@
       <template is="wxParser" data="{{wxParserData:article.articlecontent.nodes}}"/>
       <!-- <template is="wxParser" data="{{wxParserData:richText.nodes}}"/> -->
     <!--</view>
+  </view>-->
+
+  <view class='comment'>
+  <image src='../../images/article_img/赞.png' class='like'></image><text class='like_num'>326</text>
+  <!-- <image src='../../images/article_img/踩.png' class='like'></image><text class='not_like_num'>3</text> -->
   </view>
+
   <!--页面末尾的声明-->
   <text class='fun'>--Fun心理测试by dada--</text>
 <!--</view>-->
