@@ -21,7 +21,13 @@
   </view>-->
 
   <view class='comment'>
-  <image src='../../images/article_img/赞.png' class='like'></image><text class='like_num'>326</text>
+  <image wx:if="{{collect=='1'}}" src='../../images/article_img/已收藏.png' class='like' bindtap='no_collect'></image>
+  <image wx:if="{{collect=='0'}}" src='../../images/article_img/收藏.png' class='like' bindtap='i_collect'></image>
+  <text class='collect_num'>{{collectNum}}</text>
+
+  <image wx:if="{{like=='1'}}" src='../../images/article_img/已赞.png' class='like' bindtap='no_like'></image>
+  <image wx:if="{{like=='0'}}" src='../../images/article_img/赞.png' class='like' bindtap='i_like'></image>
+  <text class='like_num'>{{likeNum}}</text>
   <!-- <image src='../../images/article_img/踩.png' class='like'></image><text class='not_like_num'>3</text> -->
   </view>
 

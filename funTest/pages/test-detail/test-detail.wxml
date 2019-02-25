@@ -3,7 +3,7 @@
 <view class="container1">
 
   <view class='top-link'>
-    <view class='last'>上一题</view>
+    <view class='last' bindtap='last'>上一题</view>
     <view class='title-num'>
       {{TId}}/{{num}}题
     </view>

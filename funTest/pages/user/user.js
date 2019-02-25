@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:[]
+    userInfo:[],
+    likeNum: '',
+    collectNum:'',
+    age:''
 
   },
 
@@ -25,12 +28,80 @@ Page({
       },
       success: function (res) {
         console.log(res.data[0]);
+        let createTime = res.data[0]['createtime'];
+        //let age = that.datedifference(createTime,Date)
+        var date = new Date();
+        var Y = date.getFullYear(); 
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+        var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+        let age = that.datedifference(createTime, Y+'-'+M+'-'+D);
+        console.log(Y, M,D)
         that.setData({
-          userInfo: res.data[0]
+          userInfo: res.data[0],
+          //age:age
         });
       }
     })
 
+    that.likeNum(userOpenId);
+    that.collectNum(userOpenId);
+
+  },
+
+  likeNum: function(userOpenId) {
+    var that = this;
+    let localhost = getApp().globalData.localhost;
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/User/likeNum',
+      data: {userOpenId: userOpenId },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        // 'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          likeNum: res.data.likeNum
+        })
+      }
+    })
+  },
+
+  collectNum: function (userOpenId) {
+    var that = this;
+    let localhost = getApp().globalData.localhost;
+    wx.request({
+      url: 'http://' + localhost + '/Fun1/Home/User/collectNum',
+      data: { userOpenId: userOpenId },
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        // 'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          collectNum: res.data.collectNum
+        })
+      }
+    })
+  },
+
+  datedifference: function(sDate1, sDate2) {    //sDate1和sDate2是2006-12-18格式  
+    let that = this;
+    var dateSpan,
+    tempDate,
+    iDays;
+    sDate1 = Date.parse(sDate1);
+    sDate2 = Date.parse(sDate2);
+    dateSpan = sDate2 - sDate1;
+    dateSpan = Math.abs(dateSpan);
+    iDays = Math.floor(dateSpan / (24 * 3600 * 1000));
+    //return iDays;
+    that.setData({
+      age: iDays+'天'
+    });
   },
 
   // //客服中心
@@ -71,12 +142,19 @@ Page({
     wx.navigateTo({
       url: '/pages/article-log/article-log'
     })
-  },
+  }, 
 
   //我的测试
   testLog: function (e) {
     wx.navigateTo({
       url: '/pages/test-log/test-log'
+    })
+  },
+
+  //我的收藏
+  articleCollect: function (e) {
+    wx.navigateTo({
+      url: '/pages/article-collect/article-collect'
     })
   },
 

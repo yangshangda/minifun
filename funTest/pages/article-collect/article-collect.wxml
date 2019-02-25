@@ -1,0 +1,25 @@
+<view class='contaniner'>
+
+<!--首页-->
+
+  <!--文章列表-->
+  <view class='post-container'>
+    <block wx:for="{{articleList}}" wx:for-item="item" wx:for-index="idx">
+  	  <view class='post'  catchtap='onTapToDetail' data-articleid="{{item.articleid}}" data-group-id="{{item.group_id}}">
+        <view class='post-text'>
+			    <view class='post-title'>{{item.articletitle}}</view>
+    		  <view class='post-time'>{{item.articledescription}}</view>
+    		  <view class='post-time'>{{item.articlecreatetime}}</view>
+		    </view>
+    	  <image src='{{item.articlecover}}'></image>
+  	  </view>
+    <!--文章列表底部线-->
+      <view class='border'></view>
+    </block>
+  </view>
+
+<view wx:if="{{articleList}}" class='no_more'>没有更多了！</view>
+<view wx:else class='no_more'> 您还没有收藏记录哦！ </view>
+
+
+</view>

@@ -21,6 +21,7 @@ Page({
     DOptionScore: '',
     Checked: false,
     e: 0,
+    ascore:0,
     allscore: 0,
     QId: 0,
   },
@@ -135,9 +136,47 @@ Page({
     let ascore = e.detail.value
     let allscore = this.data.allscore
     this.setData({
-      allscore: parseInt(ascore) + parseInt(allscore)
+      allscore: parseInt(ascore) + parseInt(allscore),
+      ascore: ascore
     })
     console.log('all：', this.data.allscore)
+  },
+
+  last: function () {
+    let that = this;
+    let TId = that.data.TId
+    if (TId==1) {
+      wx.showToast({
+        title: '已没有上一题',
+        icon: 'none',
+        duration: 1300,
+      })
+      return;
+    }
+    let ascore = that.data.ascore
+    let allscore = that.data.allscore
+    let newlist = that.data.newList
+    let i = that.data.e - 2
+    
+    that.setData({
+      allscore: parseInt(allscore) - parseInt(ascore),
+      //Checked: false,
+      TId: newlist[i].testnumber,
+      Title: newlist[i].testtitle,
+      AOption: newlist[i].atitle,
+      AOptionScore: newlist[i].ascore,
+      BOption: newlist[i].btitle,
+      BOptionScore: newlist[i].bscore,
+      COption: newlist[i].ctitle,
+      COptionScore: newlist[i].cscore,
+      DOption: newlist[i].dtitle,
+      DOptionScore: newlist[i].dscore,
+      Checked: false,
+      e: i + 1
+    })
+    console.log(allscore)
+    //that.findQuestion()
+    // console.log('all：', this.data.allscore)
   },
 
 

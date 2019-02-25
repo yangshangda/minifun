@@ -7,7 +7,7 @@ Page({
   data: {
     material: [],
     materialinput:[],
-    name:''
+    name:'',
 
   },
 
