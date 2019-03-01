@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "趣味一测",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#EDB34F"
+}

@@ -1,4 +1,7 @@
 /*整个页面的样式*/
+page{
+  background-color: #fafafa;
+}
 .container{
   height: 100%;
   display: flex;
@@ -23,17 +26,18 @@ image{
   max-width: 550rpx;
   max-height: 550rpx;
 }
-block{
-  width: 80%;
-  height: 80%;
+.big-input{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 99%;
 }
 .input-v{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 20rpx;
-  width: 90%;
-
+  width: 75%;
 }
 
 label{
@@ -48,7 +52,7 @@ text{
 
 input{
     border:  1px solid rgb(206, 200, 190);
-    width: 60%;
+
 }
 
 button{

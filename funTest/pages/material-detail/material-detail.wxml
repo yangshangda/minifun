@@ -4,21 +4,18 @@
     <image src='{{material.materialcover}}'></image>
   </view>
 
-  
-      <block wx:for="{{materialinput}}" wx:for-item="v" wx:for-index="idx"> 
-          <view class='input-v'>
-          <text>{{v.label}} : </text>
-            <input class="input" value='{{name}}' bindinput='name' name="userName" maxlength="{{v.length}}" placeholder="{{v.printhit}}" 
-        />
+      <block wx:for="{{materialinput}}" wx:for-item="v" wx:for-index="idx">
+        <view class='big-input'>
+            <view class='input-v'>
+            <text>{{v.label}} : </text>
+              <input class="input" value='{{name}}' bindinput='name' name="userName" maxlength="{{v.length}}" placeholder="{{v.printhit}}" 
+          />
+            </view>
           </view>
       </block>
 
       <view>
         <button bindtap='buttonchange'>一键测试</button>
-  
-        
-
-      
       </view>
 
   

@@ -13,34 +13,47 @@
     <view class='title-id'>{{TId}}.</view><view>{{Title}}</view>
   </view>
 
+  <view class='title-img' wx:if="{{Timg}}">
+    <image src='{{Timg}}'></image>
+  </view>
 
   <radio-group bindchange="radioChange">
 
     <label bindtap='findQuestion'>
       <view class='label-v'>
-        <radio value="{{AOptionScore}}" checked='{{Checked}}'>A. {{AOption}}</radio>
+        <radio value="{{AOptionScore}}" checked='{{Checked}}'>
+        <text wx:if="{{AOption}}">A. {{AOption}}</text>
+        <image class='optionImg' wx:if="{{Aimg}}" src='{{Aimg}}'></image>
+        </radio>
       </view>
     </label>
 
     <label bindtap='findQuestion'>
       <view class='label-v'>
-        <radio value="{{BOptionScore}}" checked='{{Checked}}'>B. {{BOption}}</radio>
+        <radio value="{{BOptionScore}}" checked='{{Checked}}'>
+        <text wx:if="{{BOption}}">B. {{BOption}}</text>
+        <image class='optionImg' wx:if="{{Bimg}}" src='{{Bimg}}'></image>
+        </radio>
       </view>
     </label>
 
     <label bindtap='findQuestion'>
       <view class='label-v'>
-        <radio value="{{COptionScore}}" checked='{{Checked}}'>C. {{COption}}</radio>
+        <radio value="{{COptionScore}}" checked='{{Checked}}'>
+        <text wx:if="{{COption}}">C. {{COption}}</text>
+        <image class='optionImg' wx:if="{{Cimg}}" src='{{Cimg}}'></image>
+        </radio>
       </view>
     </label>
-
     
     <label bindtap='findQuestion'>
       <view class='label-v'>
-        <radio value="{{DOptionScore}}" checked='{{Checked}}'>D.{{DOption}}</radio>
+        <radio value="{{DOptionScore}}" checked='{{Checked}}'>
+        <text wx:if="{{DOption}}">D. {{DOption}}</text>
+        <image class='optionImg' wx:if="{{Dimg}}" src='{{Dimg}}'></image>
+        </radio>
       </view>
     </label>
-   
 
   </radio-group>
 

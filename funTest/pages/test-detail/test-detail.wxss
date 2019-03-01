@@ -55,6 +55,19 @@ radio .wx-radio-input{
   font-weight: bold;
 }
 
+.title-img{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: warp;
+  max-width: 200rpx;
+  max-height: 200rpx;
+}
+.title-img image{
+  max-width: 200rpx;
+  max-height: 200rpx;
+  margin-bottom:  -40rpx;
+}
+
 .title-id{
  margin-right: 25rpx;
 }
@@ -64,6 +77,8 @@ radio-group{
 }
 
 .label-v{
+  display: flex;
+  align-content:center;
   font-size: 16px;
   font-weight: 500;
   color: #4b4b4b;
@@ -71,5 +86,11 @@ radio-group{
   background-color: white;
   border-radius: 8px;
   width: 650rpx;
-  padding-bottom: 28rpx;
+  padding: 20rpx 0 20rpx 10rpx;
+}
+.optionImg{
+  text-align: center;
+  max-width:200rpx; 
+  max-height: 200rpx;
+  margin-left: 10rpx;
 }
