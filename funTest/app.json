@@ -24,5 +24,11 @@
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "Fun心理测试",
     "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "sdkPlugin": {
+      "version": "1.16.0",
+      "provider": "wxc6b86e382a1e3294"
+    }
   }
 }

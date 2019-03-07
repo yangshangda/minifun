@@ -1,4 +1,5 @@
 // pages/user/user.js
+const app = getApp()
 Page({
 
   /**
@@ -45,6 +46,30 @@ Page({
 
     that.likeNum(userOpenId);
     that.collectNum(userOpenId);
+
+  },
+
+  money: function () {
+    
+    let params = {
+      totalCost: 0.1,
+      merchandiseDescription: '深蓝色秋裤'
+    }
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.BaaS.pay(params)
+        } else {
+          wx.BaaS.login()
+        }
+      }
+    })
+    wx.BaaS.pay(params).then(res => {
+     
+    }, err => {
+      
+      console.log(err)
+    })
 
   },
 

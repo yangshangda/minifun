@@ -37,7 +37,7 @@ Page({
         if (userCode.code) {
           //发起网络请求
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx7b5d668466d6f342&secret=14bee27860fa6a1d36fc47f6fbdb596c&js_code=' + userCode.code + '&grant_type=authorization_code',
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx7b5d668466d6f342&secret=8d2b2c32775b672302c06c4b5a88bbd7&js_code=' + userCode.code + '&grant_type=authorization_code',
             data: {},
             method: "POST",
             header: {
@@ -45,13 +45,13 @@ Page({
             },
             success: function (res) {
               var openid = res.data.openid //返回openid
-              //console.log('openid为' + openid);
+              // console.log('openid为' + openid);
               // console.log(userInfo.detail.userInfo);
               let userLoginInfo = userInfo.detail.userInfo;
               let localhost = getApp().globalData.localhost;
               //console.log('avatarUrl',userLoginInfo.avatarUrl);
               wx.request({
-                url: 'http://' + localhost +'/Fun/Home/Welcome/index', //存入用户信息接口
+                url: 'http://' + localhost +'/Fun1/Home/Welcome/index', //存入用户信息接口
                 data: {
                   userCode: userCode.code,
                   userOpenId: openid,

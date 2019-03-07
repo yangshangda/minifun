@@ -1,6 +1,21 @@
 //app.js
+//AppSecret:8d2b2c32775b672302c06c4b5a88bbd7
+//AppID:wx7b5d668466d6f342
 App({
   onLaunch: function () {
+
+    // 引入 BaaS SDK
+    require('./utils/sdk-v1.16.0')
+
+    // wx.BaaS = requirePlugin('sdkPlugin')
+    // //让插件帮助完成登录、支付等功能
+    // wx.BaaS.wxExtend(wx.login,
+    //   wx.getUserInfo,
+    //   wx.requestPayment)
+    // let clientID = 'f4eee5a3ee4b92b90a6d'
+
+    wx.BaaS.init('f4eee5a3ee4b92b90a6d')
+  
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

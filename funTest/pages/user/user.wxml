@@ -44,7 +44,7 @@
       <image src='../../images/more_img/性格.png'></image>
       <view>待用</view>
     </view>
-    <view class='combination' catchtap='articleList' data-articleType='3'>
+    <view class='combination' catchtap='money'>
       <image src='../../images/more_img/趣味.png'></image>
       <view>社区</view>
     </view>
